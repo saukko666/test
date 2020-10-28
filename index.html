@@ -1,1 +1,29 @@
-moi
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clickme</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="clicker">
+        <button onclick="myClick();">Click me!</button>
+        <span id="text">0</span>
+        <progress id="progress" max="100" value="0"></progress>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function myClick() {
+        var text = parseInt(document.getElementById("text").innerHTML);
+        if (text > 99) {
+          text = -1;
+        }
+        text++;
+        document.getElementById("text").innerHTML = text;
+        document.getElementById("progress").setAttribute("value", text);
+      }
+    </script>
+  </body>
+</html>
